@@ -4,7 +4,7 @@ pipeline {
         stage ('CBuilding') {
 
             steps {
-                withMaven(maven : 'maven_project') {
+                withMaven(maven : 'maven-project-3.6.3') {
                     sh 'mvn clean compile'
                 }
             }
@@ -12,14 +12,14 @@ pipeline {
         stage ('Testing') {
 
             steps {
-                withMaven(maven : 'maven_project') {
+                withMaven(maven : 'maven-project-3.6.3') {
                     sh 'mvn test'
                 }
             }
         }
         stage ('Install Stage') {
             steps {
-                withMaven(maven : 'maven_project') {
+                withMaven(maven : 'maven-project-3.6.3') {
                     sh 'mvn install'
                 }
             }
